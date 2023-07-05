@@ -13,6 +13,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // routes
+app.get("/", (req, res) => res.send("Hello Word"));
 app.use("/api/notes", noteRoutes);
 app.use("/api/user", userRoutes);
 
