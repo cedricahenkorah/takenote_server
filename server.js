@@ -14,7 +14,7 @@ app.use(morgan("dev"));
 app.use(
   cors({
     origin: "https://takenote-five.vercel.app/",
-    methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
+    methods: "GET,POST,PATCH,PUT,DELETE,OPTIONS",
   })
 );
 
