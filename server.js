@@ -5,15 +5,20 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const noteRoutes = require("./routes/noteRoutes");
 const userRoutes = require("./routes/userRoutes");
-
+const cors = require("cors");
 const app = express();
 
 // middleware
 app.use(express.json());
 app.use(morgan("dev"));
+app.use(
+  cors({
+    origin: "https://takenote-five.vercel.app/",
+    methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
+  })
+);
 
 // routes
-app.get("/", (req, res) => res.send("Hello Word"));
 app.use("/api/notes", noteRoutes);
 app.use("/api/user", userRoutes);
 
