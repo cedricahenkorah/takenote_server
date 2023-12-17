@@ -15,7 +15,11 @@ app.use(morgan("dev"));
 // Allow requests only from specific origins
 app.use(
   cors({
-    origin: ["https://takenote-five.vercel.app", "http://localhost:3000"],
+    origin: [
+      "https://takenote-five.vercel.app",
+      "http://localhost:3000",
+      "http://localhost:5173",
+    ],
   })
 );
 
